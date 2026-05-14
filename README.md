@@ -55,6 +55,7 @@ chat:
   discord-to-minecraft:
     format: "&9[Discord] &f%player%&8: &b%message%"
 ```
+[Modrinth page](https://modrinth.com/plugin/minecord-plugin)
 
 
 
