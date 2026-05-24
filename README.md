@@ -39,7 +39,7 @@ Discord Channel Settings -> Integrations -> Webhooks -> Create Webhook -> Copy U
 
 
 - Open the `plugins/MineCord/config.yml` file on your server and paste the Token, Channel ID and webhook into the corresponding fields. You can also configure anything you want
-- Start the server. You should see a message in the console: "Бот Discord успешно подключен!" (If you have configured the integration)
+- Start the server. You should see a message in the console: "The Discord bot has successfully connected!" (If you have configured the integration)
 
 
 ## Configuration (config.yml)
