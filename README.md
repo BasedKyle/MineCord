@@ -7,6 +7,11 @@ MineCord is a modern, and fast plugin for Minecraft. It splits in-game chat into
 - **Customization:** You can adjust the local chat radius, the global chat symbol, as well as message prefixes and colors (supporting classic color codes via '&').
 - **Folia** and **Paper** ready
 
+## Commands
+
+- /chat <global/discord>: tollge Discord or global messages on/off by yourself
+- /ignore <nickname>: add any player in your blacklist and don't read their messages
+
 ## Installation
 
 - Download the .jar file and place it into your server's `plugins` folder.
