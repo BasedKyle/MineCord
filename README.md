@@ -9,8 +9,8 @@ MineCord is a modern, and fast plugin for Minecraft. It splits in-game chat into
 
 ## Commands
 
-- /chat <global/discord>: tollge Discord or global messages on/off by yourself
-- /ignore <nickname>: add any player in your blacklist and don't read their messages
+- **/chat <global/discord>**: tollge Discord or global messages on/off by yourself
+- **/ignore [nickname]**: add any player in your blacklist and don't read their messages
 
 ## Installation
 
