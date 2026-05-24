@@ -1,4 +1,4 @@
-# <center>MineCord</center>
+# <center> MineCord </center>
 
 MineCord is a modern, and fast plugin for Minecraft. It splits in-game chat into Local and Global channels, and it ensures synchronization of the Global chat with your Discord server. The plugin supports Paper and the multi-threaded Folia core.
 
@@ -7,11 +7,6 @@ MineCord is a modern, and fast plugin for Minecraft. It splits in-game chat into
 - **Customization:** You can adjust the local chat radius, the global chat symbol, as well as message prefixes and colors (supporting classic color codes via '&').
 - **Folia** and **Paper** ready
 
-## Commands
-
-- **/chat <global/discord>**: tollge Discord or global messages on/off by yourself
-- **/ignore [nickname]**: add any player in your blacklist and don't read their messages
-
 ## Installation
 
 - Download the .jar file and place it into your server's `plugins` folder.
@@ -19,21 +14,31 @@ MineCord is a modern, and fast plugin for Minecraft. It splits in-game chat into
 
 **If you need a Discord Integration:**
 
+
+<details>
+<summary>Spoiler</summary>
+
 - Visit the [Discord Developers Portal](https://discord.com/developers/) and create a new bot.
 - On the "Bot" tab, scroll down and make sure to enable the "Message Content Intent" toggle.
 - Go to the OAuth2 tab, check the "bot" box, and grant the bot the "Send Messages" permission. Invite bot to your server
 - Copy your bot's Token and the ID of the channel where it should post messages.
 
+</details>
+
+
+
+**If you want to use a webhook (player's nickname and icon in Discord):**
+
 <details>
 <summary>Spoiler</summary>
 
-Or just use a bot token that you already have.
+Discord Channel Settings -> Integrations -> Webhooks -> Create Webhook -> Copy URL
 
 </details>
 
 
 
-- Open the `plugins/MineCord/config.yml` file on your server and paste the Token and Channel ID into the corresponding fields. You can also configure anything you want
+- Open the `plugins/MineCord/config.yml` file on your server and paste the Token, Channel ID and webhook into the corresponding fields. You can also configure anything you want
 - Start the server. You should see a message in the console: "Бот Discord успешно подключен!" (If you have configured the integration)
 
 
@@ -44,23 +49,43 @@ You can customize it to match the style of your project:
 
 ```
 discord:
-  token: "YOUR_BOT_TOKEN"
-  channel_id: "YOUR_CHANNEL_ID"
+  # "bot" - use a bot
+  # "webhook" - use a webhook
+  type: "webhook"
+
+  # if you want Discord -> Minecraft chat // if "bot" mode
+  token: "token"
+  channel_id: "channel id"
+
+  # if "webhook"
+  webhook_url: "url"
+
+  # API for heads
+  avatar_url_template: "https://mc-heads.net/avatar/%uuid%"
 
 chat:
-  global-symbol: "!" - use any symbol or leave it blank to make any message global.
-  
+  global-symbol: "!"
+
   local:
-    radius: 200 - players in this radius will see your message in local chat
-    format: "&8[&7Local&8] &f%player%&8: &7%message%" (%player% - player's nickname; %message% - message. You can also use any color like '&f' or '&7')
-    
+    radius: 200
+    format: "&8[&7Local&8] &f%player%&8: &7%message%"
+
   global:
     format: "&8[&eGlobal&8] &f%player%&8: &e%message%"
-    
+
   discord-to-minecraft:
     format: "&9[Discord] &f%player%&8: &b%message%"
+
+messages:
+  global-disabled: "&cYou have disabled the global chat."
+  global-enabled: "&aYou have enabled the global chat."
+  discord-disabled: "&cYou have disabled the Discord chat."
+  discord-enabled: "&aYou have enabled the  Discord chat."
+  ignore-add: "&cYou have added player %player% to your ignore list."
+  ignore-remove: "&aYou have removed player %player% from your ignore list."
+  ignore-self: "&cYou cannot ignore yourself!"
+  player-not-found: "&cPlayer not found or is offline."
 ```
-[Modrinth page](https://modrinth.com/plugin/minecord-plugin)
 
 
 
