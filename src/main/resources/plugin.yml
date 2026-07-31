@@ -1,0 +1,12 @@
+name: MineCord
+version: 0.2
+main: com.kitsunekyle.chat.MineCord
+api-version: '1.21'
+folia-supported: true
+commands:
+  chat:
+    description: Chats visibility
+    usage: /chat <global|discord>
+  ignore:
+    description: Ignore player's messages
+    usage: /ignore <ник>
