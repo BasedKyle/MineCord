@@ -263,7 +263,7 @@ public class MineCord extends JavaPlugin implements Listener, CommandExecutor, T
         if (webhookUrl.isEmpty() || webhookUrl.equals("WEBHOOK_URL")) return;
 
         String avatarTemplate = getConfig().getString("discord.avatar_url_template", "https://mc-heads.net/avatar/%uuid%");
-        String avatarUrl = avatarTemplate.replace("%uuid%", player.getUniqueId().toString());
+        String avatarUrl = avatarTemplate.replace("%uuid%", player.getUniqueId().toString()).replace("%player%", player.getName());
 
         JsonObject json = new JsonObject();
         json.addProperty("content", message);

@@ -12,6 +12,7 @@ discord:
   webhook_url: "webhook url"
 
   # API for heads
+  # Supported placeholders: %uuid% (player UUID) and %player% (player name)
   avatar_url_template: "https://mc-heads.net/avatar/%uuid%"
 
 chat:
